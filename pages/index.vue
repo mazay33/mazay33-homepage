@@ -1,7 +1,8 @@
 <template>
-  <div class="mt-10 max-w-xl mx-auto w-full">
-    <ClientOnly>
-      <TheAnimation />
-    </ClientOnly>
+  <div class="mx-auto flex max-w-3xl flex-col">
+    
+      <Animation />
+
+    <HomeTypeIt />
   </div>
 </template>
