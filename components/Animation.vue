@@ -4,7 +4,10 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
+import { useWindowSize } from "@vueuse/core";
 const modelSrc = new URL("/public/laptop.glb", import.meta.url).href;
+
+const { width, height } = useWindowSize();
 onMounted(() => {
   let isInDesktop = window.innerWidth > 1148;
   const userPlatform = (platform) => {
@@ -19,7 +22,7 @@ onMounted(() => {
     1000
   );
   camera.position.x = 30;
-  camera.position.y = 20;
+  camera.position.y = 15;
   camera.position.z = 30;
   //loader
   // const dracoLoader = new DRACOLoader();
@@ -104,11 +107,13 @@ onMounted(() => {
   const animate = () => {
     requestAnimationFrame(animate);
     // cube.rotation.x += 0.01;
-    const width = window.innerWidth / 2;
-    const height = window.innerHeight / 2;
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
-    renderer.setSize(width, height);
+    if (width.value < 768) {
+      renderer.setSize(width.value / 1.5, height.value / 1.5);
+    } else {
+      renderer.setSize(width.value / 2, height.value / 2);
+    }
     controls.update();
     renderer.render(scene, camera);
   };
@@ -116,7 +121,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div class="flex items-center justify-center">
+  <div class="flex items-center justify-center pt-10">
     <div id="threejs-container" class="" />
   </div>
 </template>
@@ -124,7 +129,6 @@ onMounted(() => {
 <style>
 #threejs-container {
   width: 100%;
-  height: 50%;
   display: flex;
   justify-content: center;
   text-align: center;
