@@ -14,7 +14,7 @@ const setColorTheme = (newTheme: Theme) => {
         <h1
           class="font-['M_PLUS_Rounded_1c'] text-lg font-bold tracking-tighter"
         >
-          Andrew Mazaev
+          <nuxt-link to="/">Andrew Mazaev</nuxt-link>
         </h1>
       </div>
       <ul class="flex flex-grow items-center gap-4">
