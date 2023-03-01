@@ -23,9 +23,9 @@ export default {
 </script>
 
 <template>
-  <div class="mx-auto mx-4 -mt-28 w-full max-w-[500px] px-2">
+  <div class="mx-auto -mt-36 w-full">
     <div class="mb-6 rounded bg-white/10 p-3 text-center backdrop-blur-md">
-      <span class="text-xl" id="element" ref="element"></span>
+      <span class="" id="element" ref="element"></span>
     </div>
   </div>
 </template>
