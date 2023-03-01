@@ -112,7 +112,7 @@ onMounted(() => {
     if (width.value < 768) {
       renderer.setSize(width.value / 1.5, height.value / 1.5);
     } else {
-      renderer.setSize(width.value / 2, height.value / 2);
+      renderer.setSize(width.value / 2.5, height.value / 2.5);
     }
     controls.update();
     renderer.render(scene, camera);
