@@ -7,6 +7,6 @@
     <div class="mt-16 flex flex-1">
       <slot />
     </div>
-    <!-- <TheFooter /> -->
+    <TheFooter />
   </div>
 </template>
