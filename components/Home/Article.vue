@@ -3,7 +3,7 @@ const text = ref("Hello, I'm a frontend developer based in Russia! ");
 </script>
 <template>
   <article>
-    <AutoType class="-mt-36" :text="text" />
+    <AutoType :text="text" />
     <div class="flex items-start justify-between">
       <div class="flex flex-col">
         <h2 class="font-['M_PLUS_Rounded_1c'] text-4xl font-bold">
