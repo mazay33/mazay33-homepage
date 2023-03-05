@@ -18,7 +18,9 @@ const setColorTheme = (newTheme: Theme) => {
         </h1>
       </div>
       <ul class="flex flex-grow items-center gap-4">
-        <li class="p-2">Works</li>
+        <li class="p-2">
+          <nuxt-link to="/works">Works</nuxt-link>
+        </li>
         <li class="p-2">Posts</li>
         <li class="p-2">Uses</li>
         <li class="p-2">Source</li>
