@@ -6,7 +6,7 @@ let autoTypingText = ref("");
 const isTextTypingFinish = ref(false);
 
 const startAutoTyping = () => {
-  const typingInterval = 100;
+  const typingInterval = 75
   let currentIndex = 0;
 
   setInterval(() => {
@@ -16,7 +16,7 @@ const startAutoTyping = () => {
       }, 1000);
       return;
     }
-    autoTypingText.value += props.text[currentIndex];
+    autoTypingText.value = props.text.substring(0, currentIndex+1);
     currentIndex++;
   }, typingInterval);
 };
