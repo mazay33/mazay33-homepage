@@ -33,8 +33,8 @@ const text = ref("Hello, I'm a frontend developer based in Russia! ");
         solving and willing to adapt to changes in the industry to stay on top.
       </p>
       <div class="mt-4 flex justify-center">
-        <button
-          class="inline-flex items-center justify-center rounded bg-gray-300 py-2 px-4 font-bold text-gray-800 hover:bg-gray-400"
+        <nuxt-link to="/works"
+          class="inline-flex items-center justify-center rounded bg-gray-300 py-2 px-4 font-bold text-gray-800 hover:bg-gray-400 duration-200"
         >
           <span>My Portfolio</span>
           <svg
@@ -48,7 +48,7 @@ const text = ref("Hello, I'm a frontend developer based in Russia! ");
               d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
             ></path>
           </svg>
-        </button>
+        </nuxt-link>
       </div>
     </div>
 
