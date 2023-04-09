@@ -3,13 +3,42 @@ type Theme = "light" | "dark";
 const setColorTheme = (newTheme: Theme) => {
   useColorMode().preference = newTheme;
 };
+const mobileMenu = ref(false);
 </script>
 
 <template>
   <header
     class="transtition-all duration-400 fixed z-10 w-full bg-white/25 backdrop-blur-md dark:bg-[#20202380]"
   >
-    <div class="mx-auto flex max-w-3xl items-center p-2">
+    <div class="mx-auto flex max-w-3xl items-center justify-between p-2">
+      <transition name="fade"
+        ><div
+          v-if="mobileMenu"
+          class="fixed right-4 top-16 w-full max-w-[150px] rounded-md border border-gray-700/10 bg-white dark:border-white/20 dark:bg-[#2D3748]"
+        >
+          <ul class="flex flex-col gap-1">
+            <nuxt-link @click="mobileMenu = !mobileMenu" to="/works">
+              <li class="p-2">
+                <span to="/works">Works</span>
+              </li>
+            </nuxt-link>
+            <nuxt-link @click="mobileMenu = !mobileMenu" to="/works">
+              <li class="p-2">
+                <span to="/works">Skills</span>
+              </li>
+            </nuxt-link>
+            <a
+              @click="mobileMenu = !mobileMenu"
+              target="_blank"
+              href="https://github.com/mazay33"
+            >
+              <li class="flex items-center gap-2 p-2">
+                <span>Source</span>
+              </li>
+            </a>
+          </ul>
+        </div>
+      </transition>
       <div class="mr-5 flex items-center gap-1 p-2">
         <svg
           width="24px"
@@ -37,7 +66,7 @@ const setColorTheme = (newTheme: Theme) => {
           <nuxt-link to="/">Andrew Mazaev</nuxt-link>
         </h1>
       </div>
-      <ul class="flex flex-grow items-center gap-3">
+      <ul class="hidden flex-grow items-center gap-3 md:flex">
         <li class="p-2">
           <nuxt-link to="/works">Works</nuxt-link>
         </li>
@@ -63,39 +92,56 @@ const setColorTheme = (newTheme: Theme) => {
           <a target="_blank" href="https://github.com/mazay33">Source</a>
         </li>
       </ul>
-      <button
-        class="ml-5"
-        @click="
-          setColorTheme($colorMode.preference == 'dark' ? 'light' : 'dark')
-        "
-      >
-        <transition-group name="fade">
-          <svg
-            v-if="$colorMode.value == 'dark'"
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8 text-gray-50"
-            viewBox="0 0 20 20"
+      <div class="flex gap-3">
+        <button
+          class="ml-5"
+          @click="
+            setColorTheme($colorMode.preference == 'dark' ? 'light' : 'dark')
+          "
+        >
+          <transition-group name="fade">
+            <svg
+              v-if="$colorMode.value == 'dark'"
+              xmlns="http://www.w3.org/2000/svg"
+              class="ml-auto h-8 w-8 text-gray-50"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              />
+            </svg>
+            <svg
+              v-else
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </transition-group>
+        </button>
+        <svg
+          @click="mobileMenu = !mobileMenu"
+          height="1em"
+          width="1em"
+          viewBox="0 0 24 24"
+          focusable="true"
+          class="block h-8 w-8 cursor-pointer text-gray-800 dark:text-gray-50 md:hidden"
+          :class="mobileMenu ? 'text-gray-500 transition-all duration-300' : ''"
+          aria-hidden="true"
+        >
+          <path
             fill="currentColor"
-          >
-            <path
-              d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
-            />
-          </svg>
-          <svg
-            v-else
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </transition-group>
-      </button>
+            d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z"
+          ></path>
+        </svg>
+      </div>
     </div>
   </header>
 </template>
