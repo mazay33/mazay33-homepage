@@ -25,6 +25,7 @@
           >Website</span
         >
         <a
+          target="_blank"
           class="text-pink-400 underline-offset-4 hover:underline"
           href="https://market-dt.ru/"
           >https://market-dt.ru/</a
