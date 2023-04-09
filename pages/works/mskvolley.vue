@@ -1,4 +1,8 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+useHead({
+  title: "Works - MskVolley",
+});
+</script>
 
 <template>
   <div class="mx-auto w-full max-w-lg px-4">

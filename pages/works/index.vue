@@ -2,6 +2,9 @@
 import photo_md from "@/assets/images/md-1.jpg";
 import photo_mazay33 from "@/assets/images/mazay33-1.png";
 import photo_mvl from "@/assets/images/mvl-1.png";
+useHead({
+  title: "Works",
+});
 const works = [
   {
     title: "MarketData",

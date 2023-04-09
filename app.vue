@@ -8,6 +8,12 @@
 </template>
 
 <script setup>
+useHead({
+  title: "Andrew Mazaev - Homepage",
+  meta: [
+    { name: "Andrew Mazaev - Homepage", content: "Frontend developer portfolio" },
+  ],
+});
 const isLoading = ref(true);
 
 onMounted(() => {
