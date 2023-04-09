@@ -30,7 +30,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="mb-6 flex items-center justify-center rounded bg-white/10 p-3 text-center backdrop-blur-md"
+    class="mb-6 flex items-center justify-center rounded-md bg-white/10 p-3 text-center backdrop-blur-md"
   >
     <p class="md:text-lg">{{ autoTypingText }}</p>
     <div v-if="!isTextTypingFinish" class="cursor-animation"></div>
