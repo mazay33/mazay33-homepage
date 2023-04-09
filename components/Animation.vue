@@ -121,7 +121,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div class="flex items-center justify-center pt-10">
+  <div class="flex items-center justify-center md:pt-10">
     <div id="threejs-container" class="" />
   </div>
 </template>
