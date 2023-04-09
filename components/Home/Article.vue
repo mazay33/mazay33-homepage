@@ -20,7 +20,7 @@ const text = ref("Hello, I'm a frontend developer based in Russia! ");
 
     <div class="flex flex-col justify-start">
       <h3
-        class="my-4 text-xl font-bold underline decoration-gray-500 decoration-4 underline-offset-8"
+        class="my-4 font-['M_PLUS_Rounded_1c'] text-xl font-bold underline decoration-gray-500 decoration-4 underline-offset-8"
       >
         Work
       </h3>
@@ -33,8 +33,9 @@ const text = ref("Hello, I'm a frontend developer based in Russia! ");
         solving and willing to adapt to changes in the industry to stay on top.
       </p>
       <div class="mt-4 flex justify-center">
-        <nuxt-link to="/works"
-          class="inline-flex items-center justify-center rounded bg-gray-300 py-2 px-4 font-bold text-gray-800 hover:bg-gray-400 duration-200"
+        <nuxt-link
+          to="/works"
+          class="inline-flex items-center justify-center rounded bg-gray-300 py-2 px-4 font-bold text-gray-800 duration-200 hover:bg-gray-400"
         >
           <span>My Portfolio</span>
           <svg
@@ -53,7 +54,7 @@ const text = ref("Hello, I'm a frontend developer based in Russia! ");
     </div>
 
     <h3
-      class="my-4 text-xl font-bold underline decoration-gray-500 decoration-4 underline-offset-8"
+      class="my-4 font-['M_PLUS_Rounded_1c'] text-xl font-bold underline decoration-gray-500 decoration-4 underline-offset-8"
     >
       Bio
     </h3>
@@ -78,7 +79,7 @@ const text = ref("Hello, I'm a frontend developer based in Russia! ");
     </div>
 
     <h3
-      class="my-4 text-xl font-bold underline decoration-gray-500 decoration-4 underline-offset-8"
+      class="my-4 font-['M_PLUS_Rounded_1c'] text-xl font-bold underline decoration-gray-500 decoration-4 underline-offset-8"
     >
       I ♥
     </h3>
@@ -88,7 +89,7 @@ const text = ref("Hello, I'm a frontend developer based in Russia! ");
   </article>
 
   <h3
-    class="my-4 text-xl font-bold underline decoration-gray-500 decoration-4 underline-offset-8"
+    class="my-4 font-['M_PLUS_Rounded_1c'] text-xl font-bold underline decoration-gray-500 decoration-4 underline-offset-8"
   >
     On the web
   </h3>
