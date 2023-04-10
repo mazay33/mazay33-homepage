@@ -24,7 +24,12 @@ const mobileMenu = ref(false);
             </nuxt-link>
             <nuxt-link @click="mobileMenu = !mobileMenu" to="/works">
               <li class="p-2">
-                <span to="/works">Skills</span>
+                <span to="/skills">Skills</span>
+              </li>
+            </nuxt-link>
+            <nuxt-link @click="mobileMenu = !mobileMenu" to="/works">
+              <li class="p-2">
+                <span to="/contact">Contact</span>
               </li>
             </nuxt-link>
             <a
@@ -71,7 +76,10 @@ const mobileMenu = ref(false);
           <nuxt-link to="/works">Works</nuxt-link>
         </li>
         <li class="p-2">
-          <nuxt-link to="/">Skills</nuxt-link>
+          <nuxt-link to="/skills">Skills</nuxt-link>
+        </li>
+        <li class="p-2">
+          <nuxt-link to="/contact">Contact</nuxt-link>
         </li>
         <li class="flex items-center gap-2 p-2">
           <svg
