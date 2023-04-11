@@ -19,17 +19,17 @@ const mobileMenu = ref(false);
           <ul class="flex flex-col gap-1">
             <nuxt-link @click="mobileMenu = !mobileMenu" to="/works">
               <li class="p-2">
-                <span to="/works">Works</span>
+                <span>Works</span>
               </li>
             </nuxt-link>
-            <nuxt-link @click="mobileMenu = !mobileMenu" to="/works">
+            <nuxt-link @click="mobileMenu = !mobileMenu" to="/skills">
               <li class="p-2">
-                <span to="/skills">Skills</span>
+                <span>Skills</span>
               </li>
             </nuxt-link>
-            <nuxt-link @click="mobileMenu = !mobileMenu" to="/works">
+            <nuxt-link @click="mobileMenu = !mobileMenu" to="/contact">
               <li class="p-2">
-                <span to="/contact">Contact</span>
+                <span>Contact</span>
               </li>
             </nuxt-link>
             <a
