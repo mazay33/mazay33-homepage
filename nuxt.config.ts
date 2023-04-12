@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     }
   },
   colorMode: {
+    preference: 'dark',
     classSuffix: ''
   },
   css: ['~/assets/css/main.css'],
