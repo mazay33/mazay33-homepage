@@ -7,6 +7,28 @@ export default defineNuxtConfig({
       enabled: true
     }
   },
+  svgo: {
+    svgoConfig: {
+      multipass: true,
+      plugins: [
+        {
+          name: 'preset-default',
+          params: {
+            overrides: {
+              // customize default plugin options
+              inlineStyles: {
+                onlyMatchedOnce: false
+              },
+
+              // or disable plugins
+              removeDoctype: false,
+              removeViewBox: false
+            }
+          }
+        }
+      ]
+    }
+  },
   colorMode: {
     preference: 'dark',
     classSuffix: ''
