@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import IconVue from "@/assets/icons/vue.svg";
 import IconNuxt from "@/assets/icons/nuxt.svg";
 import IconJavascript from "@/assets/icons/javascript.svg";
