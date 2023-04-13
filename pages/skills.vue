@@ -1,55 +1,55 @@
 <script setup>
-// import IconVue from "@/assets/icons/vue.svg";
-// import IconNuxt from "@/assets/icons/nuxt.svg";
-// import IconJavascript from "@/assets/icons/javascript.svg";
-// import IconTypescript from "@/assets/icons/typescript.svg";
-// import IconThreeJs from "@/assets/icons/threejs.svg";
-// import IconTailwind from "@/assets/icons/tailwind.svg";
-// import IconSass from "@/assets/icons/sass.svg";
-// import IconSql from "@/assets/icons/sql.svg";
+import IconVue from "@/assets/icons/vue.svg";
+import IconNuxt from "@/assets/icons/nuxt.svg";
+import IconJavascript from "@/assets/icons/javascript.svg";
+import IconTypescript from "@/assets/icons/typescript.svg";
+import IconThreeJs from "@/assets/icons/threejs.svg";
+import IconTailwind from "@/assets/icons/tailwind.svg";
+import IconSass from "@/assets/icons/sass.svg";
+import IconSql from "@/assets/icons/sql.svg";
 
-// const skills = ref([
-//   {
-//     icon: IconVue,
-//     text: "Vue (2/3)",
-//   },
-//   {
-//     icon: IconNuxt,
-//     text: "Nuxt 3",
-//   },
-//   {
-//     icon: IconJavascript,
-//     text: "Javascript",
-//   },
-//   {
-//     icon: IconTypescript,
-//     text: "Typescript",
-//   },
-//   {
-//     icon: IconThreeJs,
-//     text: "ThreeJs",
-//   },
-//   {
-//     icon: IconTailwind,
-//     text: "Tailwind",
-//   },
-//   {
-//     icon: IconSass,
-//     text: "Sass/Scss",
-//   },
-//   {
-//     icon: IconSql,
-//     text: "SQL",
-//   },
-// ]);
+const skills = ref([
+  {
+    icon: IconVue,
+    text: "Vue (2/3)",
+  },
+  {
+    icon: IconNuxt,
+    text: "Nuxt 3",
+  },
+  {
+    icon: IconJavascript,
+    text: "Javascript",
+  },
+  {
+    icon: IconTypescript,
+    text: "Typescript",
+  },
+  {
+    icon: IconThreeJs,
+    text: "ThreeJs",
+  },
+  {
+    icon: IconTailwind,
+    text: "Tailwind",
+  },
+  {
+    icon: IconSass,
+    text: "Sass/Scss",
+  },
+  {
+    icon: IconSql,
+    text: "SQL",
+  },
+]);
 
-// const shuffleSkills = () => {
-//   skills.value.sort(() => Math.random() - 0.5);
-// };
+const shuffleSkills = () => {
+  skills.value.sort(() => Math.random() - 0.5);
+};
 </script>
 
 <template>
-  <!-- <div class="mx-auto w-full max-w-lg px-4">
+  <div class="mx-auto w-full max-w-lg px-4">
     <h3
       class="my-4 font-['M_PLUS_Rounded_1c'] text-xl font-bold underline decoration-gray-500 decoration-4 underline-offset-8"
     >
@@ -81,7 +81,7 @@
         Click to shuffle!
       </button>
     </div>
-  </div> -->
+  </div>
 </template>
 
 <style>
