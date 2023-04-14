@@ -12,6 +12,7 @@ useHead({
   title: "Andrew Mazaev - Homepage",
   meta: [
     { name: "Andrew Mazaev - Homepage", content: "Frontend developer portfolio" },
+    { name: "yandex-verification", content: "e30623a7d948f5da" },
   ],
 });
 const isLoading = ref(true);
