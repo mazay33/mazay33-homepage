@@ -6,13 +6,13 @@ const text = ref("Hello, I'm a frontend developer based in Russia! ");
     <AutoType :text="text" />
     <div class="flex items-start justify-between">
       <div class="flex flex-col">
-        <h2 class="font-['M_PLUS_Rounded_1c'] text-4xl font-bold">
+        <h2 class="font-['M_PLUS_Rounded_1c'] text-3xl font-bold md:text-4xl">
           Andrew Mazaev
         </h2>
         <p>Digital Craftsman ( Artist / Developer / Designer )</p>
       </div>
       <img
-        class="h-full max-h-[100px] w-full max-w-[100px] rounded-full border-[3px] border-gray-100 object-cover dark:border-gray-300"
+        class="h-full max-h-[90px] w-full max-w-[90px] rounded-full border-[3px] border-gray-100 object-cover dark:border-gray-300 md:max-h-[100px] md:max-w-[100px]"
         src="@/assets/images/image.jpg"
         alt=""
       />
