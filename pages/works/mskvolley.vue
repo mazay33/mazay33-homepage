@@ -44,8 +44,8 @@ useHead({
       </li>
     </ul>
     <img class="rounded-xl p-2" src="@/assets/images/mvl-1.png" alt="" />
-    <img class="rounded-xl p-2" src="@/assets/images/mvl-4.svg" alt="" />
-    <img class="rounded-xl p-2" src="@/assets/images/mvl-3.svg" alt="" />
-    <img class="rounded-xl p-2" src="@/assets/images/mvl-2.svg" alt="" />
+    <img class="rounded-xl p-2" src="@/assets/images/mvl-4.png" alt="" />
+    <img class="rounded-xl p-2" src="@/assets/images/mvl-3.png" alt="" />
+    <img class="rounded-xl p-2" src="@/assets/images/mvl-2.png" alt="" />
   </div>
 </template>
