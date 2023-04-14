@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/color-mode', '@vueuse/nuxt', '@kevinmarrec/nuxt-pwa', 'nuxt-svgo'],
   pwa: {
     workbox: {
-      enabled: true
+      enabled: false
     }
   },
   colorMode: {
