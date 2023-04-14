@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Loader v-if="isLoading" :isLoading="isLoading" />
+    <!-- <Loader v-if="isLoading" :isLoading="isLoading" /> -->
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -15,13 +15,13 @@ useHead({
     { name: "yandex-verification", content: "e30623a7d948f5da" },
   ],
 });
-const isLoading = ref(true);
+// const isLoading = ref(true);
 
-onMounted(() => {
-  setTimeout(() => {
-    isLoading.value = false;
-  }, 1000);
-});
+// onMounted(() => {
+//   setTimeout(() => {
+//     isLoading.value = false;
+//   }, 1000);
+// });
 </script>
 
 <style>
