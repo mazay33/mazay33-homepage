@@ -1,8 +1,13 @@
 <script setup lang="ts">
-import * as THREE from "three";
+import { WebGLRenderer } from "three/src/renderers/WebGLRenderer";
+import { PerspectiveCamera } from "three/src/cameras/PerspectiveCamera.js";
+import { sRGBEncoding } from "three/src/constants";
+import { PCFSoftShadowMap } from "three/src/constants";
+import { PMREMGenerator } from "three/src/extras/PMREMGenerator.js";
+import { Scene } from "three/src/scenes/Scene.js";
+import { DirectionalLight } from "three/src/lights/DirectionalLight.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 import { useWindowSize } from "@vueuse/core";
 const modelSrc = new URL("/public/laptop.glb", import.meta.url).href;
@@ -15,7 +20,7 @@ onMounted(() => {
   };
   //const scene = new THREE.Scene();
   // const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-  const camera = new THREE.PerspectiveCamera(
+  const camera = new PerspectiveCamera(
     75,
     window.innerWidth / window.innerHeight,
     0.1,
@@ -47,66 +52,47 @@ onMounted(() => {
     undefined,
     function (error) {
       console.error(error);
-      // comment this for debugging
     }
   );
-  // const renderer = new THREE.WebGLRenderer();
-  // renderer.setSize( window.innerWidth, window.innerHeight );
-  // add to HTML viewer
-  // const container = document.body;
   const container = document.getElementById("threejs-container");
-  //container.appendChild( renderer.domElement ); // may need to change to append this on the right element
-  // three js renderer and size on the element
-  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  const renderer = new WebGLRenderer({ antialias: true });
   renderer.setPixelRatio(window.devicePixelRatio);
-  // renderer.setSize( window.innerWidth, window.innerHeight );
-  renderer.outputEncoding = THREE.sRGBEncoding;
-  renderer.setSize(window.innerWidth, window.innerHeight); // size
+  renderer.outputEncoding = sRGBEncoding;
+  renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.shadowMap.type = PCFSoftShadowMap;
   container.appendChild(renderer.domElement);
-  renderer.setClearColor(0x000000, 0); // set transparent bg
-  // attempt to add sadows
-  const pmremGenerator = new THREE.PMREMGenerator(renderer);
-  const scene = new THREE.Scene();
-  // scene.background = new THREE.Color( 0xbfe3dd );
+  renderer.setClearColor(0x000000, 0);
+  const pmremGenerator = new PMREMGenerator(renderer);
+  const scene = new Scene();
   scene.environment = pmremGenerator.fromScene(
     new RoomEnvironment(),
     1
   ).texture;
-  // lightning and casting shadows
-  const light = new THREE.DirectionalLight(0x404040, 1); // soft white light
+
+  const light = new DirectionalLight(0x404040, 1);
   light.position.set(15, 20, 0);
   light.target.position.set(0, 0, 0);
   light.castShadow = true;
-  light.shadow.mapSize.width = 512; // default
-  light.shadow.mapSize.height = 512; // default
-  // light.shadowCameraLeft = -30;
-  // light.shadowCameraRight = 30;
-  // light.shadowCameraTop = 35;
-  // light.shadowCameraBottom = -30;
+  light.shadow.mapSize.width = 512;
+  light.shadow.mapSize.height = 512;
+
   scene.add(light);
   scene.add(light.target);
-  // helpers
-  const controls = new OrbitControls(camera, renderer.domElement); // allow users to view around the model
-  // controls.enablePan = false;
-  controls.enableDamping = true; // adds a physic effect of "inertia" when spinning camera
-  controls.maxPolarAngle = Math.PI / 2 - 0.3; // don't let user view below the ground, 0.3 is slightly above the base level
-  controls.minDistance = 50; // don't let user zoom too close
-  controls.maxDistance = 60; // don't let user zoom too far away
+
+  const controls = new OrbitControls(camera, renderer.domElement);
+
+  controls.enableDamping = true;
+  controls.maxPolarAngle = Math.PI / 2 - 0.3;
+  controls.minDistance = 50;
+  controls.maxDistance = 60;
   controls.enableRotate = true;
-  controls.rotateSpeed = 0.5; // set rotation speed of the mouse
-  controls.autoRotate = true; // auto rotate
-  controls.autoRotateSpeed = 2; // 30 seconds per orbit when fps is 60
-  // grid helper
-  const gridHelper = new THREE.GridHelper(200, 50); // add a grid
-  // light helper
-  const helper = new THREE.DirectionalLightHelper(light, 5);
-  // scene.add( gridHelper );
-  // scene.add( helper );
+  controls.rotateSpeed = 0.5;
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 2;
+
   const animate = () => {
     requestAnimationFrame(animate);
-    // cube.rotation.x += 0.01;
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     if (width.value < 768) {
