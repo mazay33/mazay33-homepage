@@ -26,11 +26,11 @@ onMounted(() => {
 <style>
 .page-enter-active,
 .page-leave-active {
-  transition: all 0.6s;
+  transition: all 0.4s;
 }
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(50px);
 }
 </style>
