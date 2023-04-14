@@ -79,12 +79,14 @@ const text = ref("Hello, I'm a frontend developer based in Russia! ");
       </div>
       <div class="flex">
         <span class="mr-3 font-bold">2022</span>
-        Worked at NewEraMedia. Created
-        <nuxt-link
-          class="ml-1 text-blue-400 underline-offset-4 hover:underline dark:text-pink-400"
-          to="/works/marketdata"
-        >
-          "MarketData".</nuxt-link
+        <span>
+          Worked at NewEraMedia. Created
+          <nuxt-link
+            class="ml-1 text-blue-400 underline-offset-4 hover:underline dark:text-pink-400"
+            to="/works/marketdata"
+          >
+            "MarketData".</nuxt-link
+          ></span
         >
       </div>
       <div class="flex">
@@ -101,7 +103,7 @@ const text = ref("Hello, I'm a frontend developer based in Russia! ");
     <p class="text-justify indent-4">
       Art, Music,
       <a
-      target="_blank"
+        target="_blank"
         class="text-blue-400 underline-offset-4 hover:underline dark:text-pink-400"
         href="https://mazay33.com/"
         >Photography</a
@@ -170,12 +172,12 @@ const text = ref("Hello, I'm a frontend developer based in Russia! ");
   <div class="mt-4 flex items-center justify-center">
     <nuxt-link
       to="/contact"
-      class="inline-flex gap-2 items-center justify-center rounded-lg bg-teal-500 px-5 py-2 font-bold text-white duration-200 hover:bg-teal-600 dark:bg-teal-200 dark:text-gray-800 dark:hover:bg-teal-300"
+      class="inline-flex items-center justify-center gap-2 rounded-lg bg-teal-500 px-5 py-2 font-bold text-white duration-200 hover:bg-teal-600 dark:bg-teal-200 dark:text-gray-800 dark:hover:bg-teal-300"
     >
-    <svg
+      <svg
         viewBox="0 0 24 24"
         focusable="false"
-        class="w-4 h-4"
+        class="h-4 w-4"
         aria-hidden="true"
       >
         <g fill="currentColor">
