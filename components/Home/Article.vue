@@ -13,7 +13,7 @@ const text = ref("Hello, I'm a frontend developer based in Russia! ");
       </div>
       <img
         class="h-full max-h-[100px] w-full max-w-[100px] rounded-full border-[3px] border-gray-100 object-cover dark:border-gray-300"
-        src="@/assets/img/image.jpg"
+        src="@/assets/images/image.jpg"
         alt=""
       />
     </div>
@@ -82,7 +82,7 @@ const text = ref("Hello, I'm a frontend developer based in Russia! ");
         <span>
           Worked at NewEraMedia. Created
           <nuxt-link
-            class="ml-1 text-blue-400 underline-offset-4 hover:underline dark:text-pink-400"
+            class="text-blue-400 underline-offset-4 hover:underline dark:text-pink-400"
             to="/works/marketdata"
           >
             "MarketData".</nuxt-link
