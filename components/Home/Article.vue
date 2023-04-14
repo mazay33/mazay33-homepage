@@ -101,6 +101,7 @@ const text = ref("Hello, I'm a frontend developer based in Russia! ");
     <p class="text-justify indent-4">
       Art, Music,
       <a
+      target="_blank"
         class="text-blue-400 underline-offset-4 hover:underline dark:text-pink-400"
         href="https://mazay33.com/"
         >Photography</a
