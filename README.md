@@ -1,42 +1,41 @@
-# Nuxt 3 Minimal Starter
+# Portfolio
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is my portfolio powered by Nuxt 3, TailwindCSS and ThreeJS
 
-## Setup
+All of the features within this project are frontend only, there are no involvement with any backend frameworks or similar.
 
-Make sure to install the dependencies:
+View the production deployment of this project on [here](https://mazay33.netlify.app/)
 
+<h2 align="center">
+  <img src="/preview.png" alt="preview" />
+  <br>
+</h2>
+
+
+## Featrues 
+- PWA
+- Interactive 3D model and UI
+- Theme selector
+- Flexible responsive design 
+
+---
+
+## Get started
+Fork this project on Git, after forking the project, clone it into your own local machine.
 ```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
+git clone https://github.com/<your-git-username>/mazay33-homepage.git
 ```
 
-## Development Server
+initialize the project
+```bash
+cd mazay33-homepage
+npm install
+```
 
-Start the development server on http://localhost:3000
-
+now run the project
 ```bash
 npm run dev
 ```
+then visit http://localhost:3000 to view the project.
 
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+---
