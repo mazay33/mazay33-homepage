@@ -11,7 +11,7 @@
       class="m-auto -mb-[64px] mt-[24px] xs:-mb-[140px] xs:-mt-[10px] md:-mb-[200px] md:-mt-[60px]"
     />
 
-    <div class="flex flex-1">
+    <div class="flex flex-1 z-50">
       <slot />
     </div>
     <TheFooter />
