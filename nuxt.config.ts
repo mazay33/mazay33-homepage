@@ -3,9 +3,9 @@ export default defineNuxtConfig({
   app: { pageTransition: { name: 'page', mode: 'out-in' } },
   modules: ['@nuxtjs/color-mode', '@vueuse/nuxt', '@kevinmarrec/nuxt-pwa', 'nuxt-svgo'],
   pwa: {
-    workbox: {
-      enabled: true
-    }
+    // workbox: {
+    //   enabled: true
+    // }
   },
   colorMode: {
     preference: 'dark',
