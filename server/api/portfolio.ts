@@ -24,13 +24,47 @@ export default defineEventHandler((event) => {
             year: "2021",
             title: "53xapps",
             description: "Worked at 53xapps. Moscow",
+            projects: {
+              mskvolley: {
+                title: "MskVolley",
+                link: "/works/mskvolley",
+              },
+            },
           },
           {
             year: "2022",
             title: "NewEraMedia",
             description: "Worked at NewEraMedia",
-            link: "/works/marketdata",
-            linkText: "MarketData",
+            projects: {
+              marketdata: {
+                title: "MarketData",
+                link: "/works/marketdata",
+              },
+            },
+          },
+          {
+            year: "2022 - 2023",
+            title: "Go Global World",
+            // description: "Worked at Go Global World",
+            projects: {
+              marketdata: {
+                title: "Go Global World App",
+                link: "https://www.goglobal.world/",
+              },
+            },
+          },
+          {
+            year: "2023 to present",
+            title: "Working in Analytical Center under the Government of the Russian Federation",
+            site: "https://www.ac.gov.ru/",
+            siteName: "ac.gov.ru",
+            // description: "Worked at Go Global World",
+            // projects: {
+            //   marketdata: {
+            //     title: "Go Global World App",
+            //     link: "https://www.goglobal.world/",
+            //   },
+            // },
           },
           // {
           //   year: "2022 - 2023",
@@ -46,8 +80,8 @@ export default defineEventHandler((event) => {
         ],
         interests: ["Art", "Music", "Photography", "Football"],
         social_media: {
-          twitter: "@mazay33",
-          instagram: "@mazay33",
+          github: "mazay33",
+          instagram: "mazay33",
         },
       },
     },

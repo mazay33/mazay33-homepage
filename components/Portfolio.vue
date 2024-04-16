@@ -1,11 +1,11 @@
 <script setup>
-const text = ref("Hello, I'm a frontend developer based in Russia! ");
+const text = ref("Hello, I'm a Frontend developer based in Russia! ");
 
 const { data: portfolio } = await useFetch("/api/portfolio");
 </script>
 <template>
   <article>
-    <AutoType :text="text" />
+    <UITextInfo :text="text" />
     <div class="flex items-start justify-between">
       <div class="flex flex-col">
         <h2 class="font-['M_PLUS_Rounded_1c'] text-3xl font-bold md:text-4xl">
@@ -69,12 +69,25 @@ const { data: portfolio } = await useFetch("/api/portfolio");
           <time class="font-mono italic">{{ item.year }}</time>
           <div class="text-lg font-black">{{ item.title }}</div>
           <div v-if="item.description">{{ item.description }}</div>
+
+          <ul v-if="item.projects">
+            <p class="font-bold">Projects:</p>
+            <nuxt-link
+              v-for="project in item.projects"
+              :key="project"
+              class="text-blue-400 underline-offset-4 hover:underline dark:text-pink-400"
+              :to="project.link"
+            >
+              - {{ project.title }}
+            </nuxt-link>
+          </ul>
+
           <nuxt-link
-            v-if="item.link"
+            v-if="item.site"
             class="text-blue-400 underline-offset-4 hover:underline dark:text-pink-400"
-            :to="item.link"
+            :to="item.site"
           >
-            {{ item.linkText }}
+            {{ item.siteName }}
           </nuxt-link>
         </div>
         <hr
@@ -94,13 +107,7 @@ const { data: portfolio } = await useFetch("/api/portfolio");
       I ♥
     </h3>
     <p class="text-justify indent-4">
-      Art, Music,
-      <a
-        target="_blank"
-        class="text-blue-400 underline-offset-4 hover:underline dark:text-pink-400"
-        href="https://mazay33.com/"
-        >Photography</a
-      >, Football
+      {{ portfolio.work.portfolio.interests.join(", ") }}
     </p>
   </article>
 
@@ -110,23 +117,17 @@ const { data: portfolio } = await useFetch("/api/portfolio");
     On the web
   </h3>
   <ul>
-    <li>
-      <a href="https://github.com/mazay33">
+    <li
+      v-for="(item, key) in portfolio.work.portfolio.social_media"
+      :key="item"
+    >
+      <a :href="`https://${key}.com/${item}`">
         <button
           class="mx-4 inline-flex items-center gap-2 rounded p-2 font-bold text-teal-500 transition-all duration-200 hover:bg-teal-500/20 dark:text-teal-300 dark:hover:bg-teal-300/20"
         >
-          <IconGithub />
-          <span>@mazay33</span>
-        </button>
-      </a>
-    </li>
-    <li>
-      <a href="https://www.instagram.com/mazay33/">
-        <button
-          class="mx-4 inline-flex items-center gap-2 rounded p-2 font-bold text-teal-500 transition-all duration-200 hover:bg-teal-500/20 dark:text-teal-300 dark:hover:bg-teal-300/20"
-        >
-          <IconInstagram />
-          <span>@mazay33</span>
+          <IconGithub v-if="key === 'github'" />
+          <IconInstagram v-if="key === 'instagram'" />
+          <span>@{{ item }}</span>
         </button>
       </a>
     </li>

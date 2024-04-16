@@ -7,8 +7,8 @@ draco.setDecoderConfig({ type: "js" });
 draco.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/");
 
 export function loadGLTFModel(
-  scene,
-  glbPath,
+  scene: THREE.Scene,
+  glbPath: string,
   options = { receiveShadow: true, castShadow: true }
 ) {
   console.log("loadGLTFModel", glbPath);
