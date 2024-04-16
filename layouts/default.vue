@@ -1,8 +1,17 @@
+<script setup lang="ts">
+// const asd = defineAsyncComponent({
+//   loader: () => import("@/components/VoxelDog.vue"),
+// });
+</script>
+
 <template>
   <div class="m-auto flex min-h-screen flex-col">
     <TheHeader />
-      <LazyAnimation class="md:pt-20 -mb-36" />
-    <div class="md:mt-16 flex flex-1">
+    <LazyVoxelDog
+      class="m-auto -mb-[40px] mt-[10px] sm:-mb-[140px] sm:-mt-[30px] md:-mb-[200px] md:-mt-[60px]"
+    />
+
+    <div class="flex flex-1">
       <slot />
     </div>
     <TheFooter />
