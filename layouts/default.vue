@@ -8,7 +8,7 @@
   <div class="m-auto flex min-h-screen flex-col">
     <TheHeader />
     <LazyVoxelDog
-      class="m-auto -mb-[40px] mt-[10px] sm:-mb-[140px] sm:-mt-[30px] md:-mb-[200px] md:-mt-[60px]"
+      class="m-auto -mb-[64px] mt-[64px] xs:-mb-[140px] xs:-mt-[10px] md:-mb-[200px] md:-mt-[60px]"
     />
 
     <div class="flex flex-1">
