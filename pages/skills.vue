@@ -6,7 +6,11 @@ import IconTypescript from "@/assets/icons/typescript.svg";
 import IconThreeJs from "@/assets/icons/threejs.svg";
 import IconTailwind from "@/assets/icons/tailwind.svg";
 import IconSass from "@/assets/icons/sass.svg";
-import IconSql from "@/assets/icons/sql.svg";
+import IconSql from "@/assets/icons/postgres.svg";
+import IconDocker from "@/assets/icons/docker.svg";
+import IconExpress from "@/assets/icons/express-js.svg";
+import IconNginx from "@/assets/icons/nginx.svg";
+import IconNode from "@/assets/icons/nodejs.svg";
 
 const skills = ref([
   {
@@ -39,7 +43,24 @@ const skills = ref([
   },
   {
     icon: IconSql,
-    text: "SQL",
+    text: "PostgreSQL",
+  },
+  {
+    icon: IconNode,
+    text: "Node.js",
+  },
+  {
+    icon: IconExpress,
+    text: "Express.js",
+  },
+  {
+    icon: IconDocker,
+    text: "Docker",
+  },
+
+  {
+    icon: IconNginx,
+    text: "Nginx",
   },
 ]);
 
@@ -56,7 +77,7 @@ const shuffleSkills = () => {
       My technology
     </h3>
     <div
-      class="mt-10 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4"
+      class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4"
     >
       <transition-group name="list-complete">
         <div
