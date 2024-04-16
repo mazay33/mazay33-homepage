@@ -65,7 +65,7 @@ const { data: portfolio } = await useFetch("/api/portfolio");
         <div class="timeline-middle">
           <IconCheck />
         </div>
-        <div class="timeline-end mb-10">
+        <div class="timeline-end mb-5">
           <time class="font-mono italic">{{ item.year }}</time>
           <div class="text-lg font-black">{{ item.title }}</div>
           <div v-if="item.description">{{ item.description }}</div>
