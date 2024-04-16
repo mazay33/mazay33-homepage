@@ -1,0 +1,18 @@
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 12px;
+  @apply bg-white/90 dark:bg-black/10;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  @apply bg-black/40 dark:bg-white/20;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-black/20 dark:bg-white/40;
+}
+::-webkit-scrollbar-thumb:active {
+  @apply bg-black/10 dark:bg-white/90;
+}
