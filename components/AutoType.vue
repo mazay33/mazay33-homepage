@@ -6,7 +6,7 @@ let autoTypingText = ref("");
 const isTextTypingFinish = ref(false);
 
 const startAutoTyping = () => {
-  const typingInterval = 75
+  const typingInterval = 75;
   let currentIndex = 0;
 
   setInterval(() => {
@@ -16,7 +16,7 @@ const startAutoTyping = () => {
       }, 1000);
       return;
     }
-    autoTypingText.value = props.text.substring(0, currentIndex+1);
+    autoTypingText.value = props.text.substring(0, currentIndex + 1);
     currentIndex++;
   }, typingInterval);
 };
@@ -30,10 +30,10 @@ onMounted(() => {
 
 <template>
   <div
-    class="mb-6 flex items-center justify-center rounded-md bg-white/50 dark:bg-white/10 p-3 text-center backdrop-blur-md"
+    class="mb-6 flex items-center justify-center rounded-md bg-white/50 p-3 text-center backdrop-blur-md dark:bg-white/10"
   >
-    <p class="md:text-lg">{{ autoTypingText }}</p>
-    <div v-if="!isTextTypingFinish" class="cursor-animation"></div>
+    <p class="typing-demo min-h-7 md:text-lg">{{ autoTypingText }}</p>
+    <!-- <div v-if="!isTextTypingFinish" class="cursor-animation"></div> -->
   </div>
 </template>
 
@@ -45,6 +45,21 @@ onMounted(() => {
   text-align: center;
   background-color: white;
   animation: blink 0.9s infinite;
+}
+
+.typing-demo {
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 5s steps(58);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink {
