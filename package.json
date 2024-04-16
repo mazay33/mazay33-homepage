@@ -10,17 +10,18 @@
   "devDependencies": {
     "@kevinmarrec/nuxt-pwa": "^0.17.0",
     "@types/three": "^0.149.0",
-    "autoprefixer": "^10.4.13",
-    "nuxt": "^3.4.1",
-    "nuxt-svgo": "^1.2.0",
-    "postcss": "^8.4.21",
-    "prettier": "^2.8.4",
-    "prettier-plugin-tailwindcss": "^0.2.3",
-    "svgo": "^3.0.2",
-    "tailwindcss": "^3.2.7"
+    "autoprefixer": "^10.4.19",
+    "daisyui": "^4.10.1",
+    "nuxt": "^3.11.2",
+    "nuxt-svgo": "^1.2.1",
+    "postcss": "^8.4.38",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.2.8",
+    "svgo": "^3.2.0",
+    "tailwindcss": "^3.4.3"
   },
   "dependencies": {
-    "@nuxtjs/color-mode": "^3.2.0",
+    "@nuxtjs/color-mode": "^3.4.0",
     "@vueuse/nuxt": "^9.13.0",
     "three": "^0.149.0"
   }
