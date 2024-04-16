@@ -4,6 +4,8 @@ const setColorTheme = (newTheme: Theme) => {
   useColorMode().preference = newTheme;
 };
 const mobileMenu = ref(false);
+
+const checkbox = ref();
 </script>
 
 <template>
@@ -17,23 +19,32 @@ const mobileMenu = ref(false);
           class="fixed right-4 top-16 w-full max-w-[150px] rounded-md border border-gray-700/10 bg-white dark:border-white/20 dark:bg-[#2D3748]"
         >
           <ul class="flex flex-col gap-1">
-            <nuxt-link @click="mobileMenu = !mobileMenu" to="/works">
+            <nuxt-link
+              @click="(checkbox = !checkbox), (mobileMenu = !mobileMenu)"
+              to="/works"
+            >
               <li class="p-2">
                 <span>Works</span>
               </li>
             </nuxt-link>
-            <nuxt-link @click="mobileMenu = !mobileMenu" to="/skills">
+            <nuxt-link
+              @click="(checkbox = !checkbox), (mobileMenu = !mobileMenu)"
+              to="/skills"
+            >
               <li class="p-2">
                 <span>Skills</span>
               </li>
             </nuxt-link>
-            <nuxt-link @click="mobileMenu = !mobileMenu" to="/contact">
+            <nuxt-link
+              @click="(checkbox = !checkbox), (mobileMenu = !mobileMenu)"
+              to="/contact"
+            >
               <li class="p-2">
                 <span>Contact</span>
               </li>
             </nuxt-link>
             <a
-              @click="mobileMenu = !mobileMenu"
+              @click="checkbox = !checkbox"
               target="_blank"
               href="https://github.com/mazay33/mazay33-homepage"
             >
@@ -135,13 +146,17 @@ const mobileMenu = ref(false);
         <label
           class="btn btn-circle swap swap-rotate border-none bg-inherit md:hidden"
         >
-          <input type="checkbox" @click="mobileMenu = !mobileMenu" />
+          <input
+            v-model="checkbox"
+            type="checkbox"
+            @click="mobileMenu = !mobileMenu"
+          />
 
           <svg
             class="swap-off fill-current text-gray-800 dark:text-gray-50"
             xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
+            width="40"
+            height="40"
             viewBox="0 0 512 512"
           >
             <path
@@ -154,8 +169,8 @@ const mobileMenu = ref(false);
           <svg
             class="swap-on fill-current text-gray-800 dark:text-gray-50"
             xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
+            width="40"
+            height="40"
             viewBox="0 0 512 512"
           >
             <polygon
