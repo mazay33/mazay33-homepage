@@ -8,7 +8,7 @@ const mobileMenu = ref(false);
 
 <template>
   <header
-    class="transtition-all duration-400 fixed z-10 w-full bg-white/25 backdrop-blur-md dark:bg-[#20202380]"
+    class="transtition-all duration-400 fixed z-50 w-full bg-white/25 backdrop-blur-md dark:bg-[#20202380]"
   >
     <div class="mx-auto flex max-w-3xl items-center justify-between p-2">
       <transition name="fade"
