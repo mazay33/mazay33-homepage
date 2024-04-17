@@ -43,7 +43,7 @@ export default defineEventHandler((event) => {
             },
           },
           {
-            year: "2022 - 2023",
+            year: "2023",
             title: "Go Global World",
             // description: "Worked at Go Global World",
             projects: {
