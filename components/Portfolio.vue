@@ -1,12 +1,27 @@
-<script setup>
+<script lang="ts" setup>
+import { useMotions } from "@vueuse/motion";
 const text = ref("Hello, I'm a Frontend developer based in Russia! ");
 
 const { data: portfolio } = await useFetch("/api/portfolio");
+
+const custom = useMotions();
 </script>
 <template>
   <article>
-    <UITextInfo :text="text" />
-    <div class="flex items-start justify-between">
+    <UITextInfo
+      v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="200"
+      :text="text"
+    />
+    <div
+      v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="300"
+      class="flex items-start justify-between"
+    >
       <div class="flex flex-col">
         <h2 class="font-['M_PLUS_Rounded_1c'] text-3xl font-bold md:text-4xl">
           {{ portfolio.name }}
@@ -21,7 +36,13 @@ const { data: portfolio } = await useFetch("/api/portfolio");
       </div>
     </div>
 
-    <div class="flex flex-col justify-start">
+    <div
+      v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="400"
+      class="flex flex-col justify-start"
+    >
       <h3
         class="my-4 font-['M_PLUS_Rounded_1c'] text-xl font-bold underline decoration-gray-500 decoration-4 underline-offset-8"
       >
@@ -52,12 +73,20 @@ const { data: portfolio } = await useFetch("/api/portfolio");
     </div>
 
     <h3
+      v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="500"
       class="my-4 font-['M_PLUS_Rounded_1c'] text-xl font-bold underline decoration-gray-500 decoration-4 underline-offset-8"
     >
       Bio
     </h3>
 
     <ul
+      v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="500"
       class="timeline timeline-vertical timeline-snap-icon max-md:timeline-compact"
     >
       <li v-for="item in portfolio.work.portfolio.timeline" :key="item.year">
@@ -102,21 +131,40 @@ const { data: portfolio } = await useFetch("/api/portfolio");
     </ul>
 
     <h3
+      v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="500"
       class="my-4 font-['M_PLUS_Rounded_1c'] text-xl font-bold underline decoration-gray-500 decoration-4 underline-offset-8"
     >
       I ♥
     </h3>
-    <p class="text-justify indent-4">
+    <p
+      v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="500"
+      class="text-justify indent-4"
+    >
       {{ portfolio.work.portfolio.interests.join(", ") }}
     </p>
   </article>
 
   <h3
+    v-motion
+    :initial="{ opacity: 0, y: 100 }"
+    :enter="{ opacity: 1, y: 0, scale: 1 }"
+    :delay="500"
     class="my-4 font-['M_PLUS_Rounded_1c'] text-xl font-bold underline decoration-gray-500 decoration-4 underline-offset-8"
   >
     On the web
   </h3>
-  <ul>
+  <ul
+    v-motion
+    :initial="{ opacity: 0, y: 100 }"
+    :enter="{ opacity: 1, y: 0, scale: 1 }"
+    :delay="500"
+  >
     <li
       v-for="(item, key) in portfolio.work.portfolio.social_media"
       :key="item"

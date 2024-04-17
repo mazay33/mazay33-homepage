@@ -26,10 +26,17 @@ const works = [
 
 <template>
   <div class="mx-auto w-full max-w-lg px-4">
-    <h2 class="mb-4 font-['M_PLUS_Rounded_1c'] text-xl font-bold">Works</h2>
+    <h2  v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="100" class="mb-4 font-['M_PLUS_Rounded_1c'] text-xl font-bold">Works</h2>
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
       <nuxt-link
-        v-for="work in works"
+      v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="i * 150"
+        v-for="(work, i) in works"
         :key="work.title"
         :to="`/works/${work.title.toLowerCase().trim()}`"
         class="mb-auto flex flex-col justify-center md:items-center"

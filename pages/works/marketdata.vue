@@ -5,7 +5,10 @@ useHead({
 </script>
 
 <template>
-  <div class="mx-auto w-full max-w-lg px-4">
+  <div     v-motion
+    :initial="{ opacity: 0, y: 100 }"
+    :enter="{ opacity: 1, y: 0, scale: 1 }"
+    :delay="200"  class="mx-auto w-full max-w-lg px-4">
     <div class="mb-4 flex items-center gap-2">
       <nuxt-link
         to="/works"

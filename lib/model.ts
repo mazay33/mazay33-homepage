@@ -11,8 +11,7 @@ export function loadGLTFModel(
   glbPath: string,
   options = { receiveShadow: true, castShadow: true }
 ) {
-  console.log("loadGLTFModel", glbPath);
-  console.log(scene);
+
 
   const { receiveShadow, castShadow } = options;
   return new Promise((resolve, reject) => {

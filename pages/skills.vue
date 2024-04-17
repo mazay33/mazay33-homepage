@@ -72,16 +72,24 @@ const shuffleSkills = () => {
 <template>
   <div class="mx-auto w-full max-w-lg px-4">
     <h3
+      v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="100"
       class="my-4 font-['M_PLUS_Rounded_1c'] text-xl font-bold underline decoration-gray-500 decoration-4 underline-offset-8"
     >
       My technology
     </h3>
     <div
+      v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="200"
       class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4"
     >
       <transition-group name="list-complete">
         <div
-          v-for="skill in skills"
+          v-for="(skill, i) in skills"
           :key="skill.text"
           class="group flex flex-col items-center justify-center gap-1 rounded-xl bg-[#2d2d2dee]/10 px-4 pb-1 pt-2 duration-300 hover:rotate-12 dark:bg-[#2d2d2dee]/80"
         >
@@ -94,7 +102,10 @@ const shuffleSkills = () => {
         </div>
       </transition-group>
     </div>
-    <div class="mt-10 flex items-center justify-center">
+    <div  v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="300" class="mt-10 flex items-center justify-center">
       <button
         class="rounded-xl bg-pink-400 px-6 py-4 text-xl font-bold text-white duration-300 hover:bg-pink-500 dark:bg-blue-400 dark:hover:bg-blue-500"
         @click="shuffleSkills()"
