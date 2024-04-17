@@ -1,8 +1,6 @@
 # Portfolio
 
-This is my portfolio powered by Nuxt 3, TailwindCSS and ThreeJS
-
-All of the features within this project are frontend only, there are no involvement with any backend frameworks or similar.
+This is my portfolio powered by Nuxt 3, TailwindCSS(daisyUI) and ThreeJS
 
 View the production deployment of this project on [here](https://mazay33.netlify.app/)
 
