@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { useMotions } from "@vueuse/motion";
-const text = ref("Hello, I'm a Frontend developer based in Russia! ");
 
 const { data: portfolio } = await useFetch("/api/portfolio");
 
@@ -13,8 +12,8 @@ const custom = useMotions();
       :initial="{ opacity: 0, y: 100 }"
       :enter="{ opacity: 1, y: 0, scale: 1 }"
       :delay="200"
-      :text="text"
-    />
+      >Hello, I'm a Frontend developer based in Russia!</UITextInfo
+    >
     <div
       v-motion
       :initial="{ opacity: 0, y: 100 }"
