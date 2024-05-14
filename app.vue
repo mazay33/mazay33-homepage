@@ -19,10 +19,13 @@ useHead({
       content: "Andrew Mazaev's Frontend developer portfolio",
     },
     { name: "yandex-verification", content: "e30623a7d948f5da" },
+    {
+      name: "google-site-verification",
+      content: "hZYvtHkdb0I5qFurmRbdkiRxfvM4sKQ6iLFsfchfsdI",
+    },
   ],
 });
 </script>
-
 <style>
 .page-enter-active,
 .page-leave-active {
