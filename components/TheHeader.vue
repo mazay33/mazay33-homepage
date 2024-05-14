@@ -21,6 +21,14 @@ const checkbox = ref();
           <ul class="flex flex-col gap-1">
             <nuxt-link
               @click="(checkbox = !checkbox), (mobileMenu = !mobileMenu)"
+              to="/blog"
+            >
+              <li class="p-2">
+                <span>Blog</span>
+              </li>
+            </nuxt-link>
+            <nuxt-link
+              @click="(checkbox = !checkbox), (mobileMenu = !mobileMenu)"
               to="/works"
             >
               <li class="p-2">
@@ -64,6 +72,9 @@ const checkbox = ref();
         </h1>
       </div>
       <ul class="hidden flex-grow items-center gap-3 md:flex">
+        <li class="p-2">
+          <nuxt-link to="/blog">Blog</nuxt-link>
+        </li>
         <li class="p-2">
           <nuxt-link to="/works">Works</nuxt-link>
         </li>

@@ -10,6 +10,6 @@
     @apply scroll-smooth antialiased;
   }
   body {
-    @apply bg-[#F0E7DB] text-[#1A202C] transition-all duration-300 dark:bg-[#202023] dark:text-white/90;
+    @apply bg-[#F0E7DB] text-[#1A202C] transition-all duration-300 dark:bg-[#202023] dark:text-white/90 overflow-x-hidden;
   }
 }
