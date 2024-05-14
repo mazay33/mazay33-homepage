@@ -9,7 +9,6 @@
     "generate-sb-types": "storyblok-generate-ts source=./components.288367.json target=./component-types-sb"
   },
   "devDependencies": {
-    "@kevinmarrec/nuxt-pwa": "^0.17.0",
     "@nuxt/content": "^2.12.1",
     "@storyblok/nuxt": "^6.0.10",
     "@tailwindcss/typography": "^0.5.13",
@@ -33,9 +32,6 @@
     "@vueuse/motion": "^2.1.0",
     "@vueuse/nuxt": "^9.13.0",
     "highlight.js": "^11.9.0",
-    "three": "^0.149.0",
-    "vue-markdown": "^2.2.4",
-    "vue3-markdown": "^1.1.9",
-    "vue3-runtime-template": "^1.0.2"
+    "three": "^0.149.0"
   }
 }
